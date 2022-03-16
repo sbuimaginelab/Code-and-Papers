@@ -32,6 +32,7 @@ python -m torch.distributed.launch --nproc_per_node=3 extract_features.py --pret
 
 ## TCGA Lung Cancer weights:
 5X weights :- https://drive.google.com/drive/folders/1cOshjIzrzuYN61lGAxyQ7f8-qGsG8GBs?usp=sharing
+
 20X weights :- https://drive.google.com/drive/folders/1NSBKYt8oPtS7hK5dxNUTCKBjOBee0OIc?usp=sharing
 
 ## Citation
