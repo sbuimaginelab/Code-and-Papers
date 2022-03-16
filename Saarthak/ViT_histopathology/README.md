@@ -30,6 +30,9 @@ If you choose not to specify `--pretrained_weights`, then DINO reference weights
 python -m torch.distributed.launch --nproc_per_node=3 extract_features.py --pretrained_weights /path/to/checkpoint.pth --checkpoint_key teacher --data_path /path/to/train_test_file_list_pickle
 ```
 
+## TCGA Lung Cancer weights:
+5X weights :- https://drive.google.com/drive/folders/1cOshjIzrzuYN61lGAxyQ7f8-qGsG8GBs?usp=sharing
+20X weights :- https://drive.google.com/drive/folders/1NSBKYt8oPtS7hK5dxNUTCKBjOBee0OIc?usp=sharing
 
 ## Citation
 If you find this repository useful, please consider giving a star :star: and citation :t-rex::
