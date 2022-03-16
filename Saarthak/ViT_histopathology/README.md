@@ -35,7 +35,7 @@ python -m torch.distributed.launch --nproc_per_node=3 extract_features.py --pret
 20X weights :- https://drive.google.com/drive/folders/1NSBKYt8oPtS7hK5dxNUTCKBjOBee0OIc?usp=sharing
 
 ## Citation
-If you find this repository useful, please consider giving a star :star: and citation :t-rex::
+If you find this repository useful, please consider giving a star :star: and citation:
 ```
 To add
 ```
