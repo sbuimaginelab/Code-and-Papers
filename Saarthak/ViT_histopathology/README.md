@@ -11,17 +11,9 @@ Please install [PyTorch](https://pytorch.org/). This codebase has been developed
 python main_dino.py --help
 ```
 
-
 ```
-python -m torch.distributed.launch --nproc_per_node=4 main_dino.py --arch vit_small --data_path /path/to/file_list_pickle/train --output_dir /path/to/saving_dir
+python -m torch.distributed.launch --nproc_per_node=3 main_dino.py --arch vit_small --data_path /path/to/train_file_list_pickle/ --output_dir /path/to/saving_dir
 ```
-
-### Multi-node training
-We use Slurm and [submitit](https://github.com/facebookincubator/submitit) (`pip install submitit`). To train on 2 nodes with 8 GPUs each (total 16 GPUs):
-```
-python run_with_submitit.py --nodes 2 --ngpus 8 --arch vit_small --data_path /path/to/imagenet/train --output_dir /path/to/saving_dir
-```
-
 
 ## Self-attention visualization
 You can look at the self-attention of the [CLS] token on the different heads of the last layer by running:
@@ -31,11 +23,11 @@ python visualize_attention.py
 
 
 ## Extract features:
-To evaluate a simple k-NN classifier with a single GPU on a pre-trained model, run:
+To extract features from feature extractor on histopathology patches, run:
 
 If you choose not to specify `--pretrained_weights`, then DINO reference weights are used by default. If you want instead to evaluate checkpoints from a run of your own, you can run for example:
 ```
-python -m torch.distributed.launch --nproc_per_node=1 eval_knn.py --pretrained_weights /path/to/checkpoint.pth --checkpoint_key teacher --data_path /path/to/imagenet 
+python -m torch.distributed.launch --nproc_per_node=3 extract_features.py --pretrained_weights /path/to/checkpoint.pth --checkpoint_key teacher --data_path /path/to/train_test_file_list_pickle
 ```
 
 
